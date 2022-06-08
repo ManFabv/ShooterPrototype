@@ -45,6 +45,9 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "Interaction")
 	FOnUseItem OnUseItem;
 protected:
+
+	/** Changes the Weapon ciclying **/
+	void OnChangeWeapon();
 	
 	/** Fires a projectile. */
 	void OnPrimaryAction();

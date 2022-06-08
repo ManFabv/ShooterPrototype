@@ -57,6 +57,8 @@ void AShooterPrototypeCharacter::SetupPlayerInputComponent(class UInputComponent
 
 	// Bind fire event
 	PlayerInputComponent->BindAction("PrimaryAction", IE_Pressed, this, &AShooterPrototypeCharacter::OnPrimaryAction);
+	// Bind change weapon event
+	PlayerInputComponent->BindAction("ChangeWeaponAction", IE_Pressed, this, &AShooterPrototypeCharacter::OnChangeWeapon);
 
 	// Enable touchscreen input
 	EnableTouchscreenMovement(PlayerInputComponent);
@@ -78,6 +80,11 @@ void AShooterPrototypeCharacter::OnPrimaryAction()
 {
 	// Trigger the OnItemUsed Event
 	OnUseItem.Broadcast();
+}
+
+void AShooterPrototypeCharacter::OnChangeWeapon()
+{
+	// switch between weapons
 }
 
 void AShooterPrototypeCharacter::BeginTouch(const ETouchIndex::Type FingerIndex, const FVector Location)
